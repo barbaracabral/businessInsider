@@ -13,10 +13,3 @@ jobs:
           lhci autorun --disable-network-throttling --disable-cpu-throttling
         env:
           LHCI_GITHUB_TOKEN: ${{ secrets.LIGHTHOUSE_CHECK_ACCESS_TOKEN }}
-
-      - name: Save lighthouse results
-        if: always()
-        uses: actions/upload-artifacts@v2
-        with:
-          name: lighthouse-results
-          path: .lighthouseci
