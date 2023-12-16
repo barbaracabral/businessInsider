@@ -2,7 +2,7 @@ name: LH Audits
 on: [push]
 jobs:
   run_lighthouse:
-    runs-on: ec2
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Install Dependencies
