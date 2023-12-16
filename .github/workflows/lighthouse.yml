@@ -1,8 +1,5 @@
 name: LH Audits 
-on:
-  pull_request:
-    branches:
-      - first-tests
+on: [push]
 jobs:
   run_lighthouse:
     runs-on: ec2
