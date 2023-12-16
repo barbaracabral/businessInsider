@@ -26,7 +26,6 @@ describe('Abrir a home do Business Insider spec', () => {
 
   it('Checar o Newsletter Signup no Body da Página', () => {
     cy.visit('/');
-    cy.wait(2000);
     //Preencher o Newsletter Signup
     cy.get('.newsletter-signup').scrollIntoView({ offset: { top: -150, left: 0 } });
     cy.get('#newsletter-module-input').type('barbaracabral@gmail.com');
