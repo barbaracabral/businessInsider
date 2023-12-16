@@ -1,0 +1,27 @@
+name: LH Audits 
+on:
+  pull_request:
+    branches:
+      - first-tests
+jobs:
+  run_lighthouse:
+    runs-on: ec2
+    timeout-minutes: 10
+    steps:
+      - name: Install Dependencies
+        run: npm intall
+      - name: Build
+        run: npm run build
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.6.x
+          lhci autorun --disable-network-throttling --disable-cpu-throttling
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.LIGHTHOUSE_CHECK_ACCESS_TOKEN }}
+
+      - name: Save lighthouse results
+        if: always()
+        uses: actions/upload-artifacts@v2
+        with:
+          name: lighthouse-results
+          path: .lighthouseci

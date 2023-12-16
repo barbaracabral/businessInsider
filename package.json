@@ -7,10 +7,12 @@
     "start": "npx cypress open",
     "cy:run": "npx cypress run",
     "test": "npx cypress run"
-  }, 
+  },
   "author": "Bárbara Cabral",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.1"
+    "cypress": "^13.6.1",
+    "lighthouse": "^11.4.0",
+    "lighthouse-ci": "^1.13.1"
   }
 }
