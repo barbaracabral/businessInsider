@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.6.1",
+    "intl-messageformat-parser": "^6.4.4",
     "lighthouse": "^11.4.0",
     "lighthouse-ci": "^1.13.1",
-    "raven": "^2.6.4"
+    "raven": "^2.6.4",
+    "uuid": "^9.0.1"
   }
 }
